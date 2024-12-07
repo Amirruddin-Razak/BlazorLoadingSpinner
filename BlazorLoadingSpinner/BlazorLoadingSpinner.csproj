@@ -8,7 +8,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>Blazor Loading Spinner</Title>
     <Authors>Amirruddin Abdul Razak</Authors>
-    <Version>0.0.1</Version>
+    <Version>0.1.0</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Amirruddin-Razak/BlazorLoadingSpinner</RepositoryUrl>

@@ -1,8 +1,8 @@
 ﻿<div class="container">
     @if (IsLoading)
     {
-        <div class="loading-overlay" style="position: @(FullPage ? "fixed" : "absolute")">
-            <div class="spinner"></div>
+        <div class="loading-overlay" style="@GetOverlayStyles()">
+            <div class="spinner" style="@GetSpinnerStyles()"></div>
         </div>
     }
     @ChildContent
@@ -17,4 +17,38 @@
 
     [Parameter]
     public bool FullPage { get; set; } = false;
+
+    [Parameter]
+    public Color OverlayColor { get; set; } = new(0, 0, 0, 0.7);
+
+    [Parameter]
+    public Color SpinnerColor { get; set; } = new(255, 255, 255, 0.4);
+
+    private string GetOverlayStyles()
+    {
+        List<string> styleList = new List<string>();
+
+        if (FullPage)
+        {
+            styleList.Add("position: fixed");
+        }
+        else
+        {
+            styleList.Add("position: absolute");
+        }
+
+        styleList.Add($"background: {OverlayColor}");
+
+        return string.Join(';', styleList);
+    }
+
+    private string GetSpinnerStyles()
+    {
+        List<string> styleList = new List<string>();
+
+        styleList.Add($"border: 10px solid {SpinnerColor}");
+        styleList.Add($"border-top: 10px solid transparent");
+
+        return string.Join(';', styleList);
+    }
 }
