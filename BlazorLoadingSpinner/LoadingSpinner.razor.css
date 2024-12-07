@@ -1,0 +1,39 @@
+﻿.container * {
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+}
+
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner {
+    width: 75px;
+    height: 75px;
+    border: 10px solid rgba(255, 255, 255, 0.3);
+    border-top: 10px solid transparent;
+    border-radius: 50%;
+    animation: spin 1.9s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

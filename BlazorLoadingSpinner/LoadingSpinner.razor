@@ -1,0 +1,20 @@
+﻿<div class="container">
+    @if (IsLoading)
+    {
+        <div class="loading-overlay" style="position: @(FullPage ? "fixed" : "absolute")">
+            <div class="spinner"></div>
+        </div>
+    }
+    @ChildContent
+</div>
+
+@code {
+    [Parameter]
+    public bool IsLoading { get; set; }
+
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public bool FullPage { get; set; } = false;
+}
